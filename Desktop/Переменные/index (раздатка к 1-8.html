@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Курс JavaScript</title>
+	<script>
+		// Задание 1.8
+		// var surname = 'Карамзин';
+		// var name = 'Виктор';
+		// var patronymic = 'Геннадьевич';
+		// var ocupation = 'Преподаватель специальных дисциплин.';
+		// var degree = 'Высшее.';
+		// var category = 'Первая.';
+		// var education = 'Московский государственный институт электронной техники <br> (технический университет).';
+		// var discipline = 'Информатика.';
+		// var note = 'Примечание:';
+		//Задание 1.9
+		// Заменим на массив		
+		// let array = [
+		// 	'Карамзин',
+		// 	'Виктор',
+		// 	'Геннадьевич',
+		// 	'Преподаватель специальных дисциплин. ',
+		// 	'Высшее. ',
+		// 	'Первая. ',
+		// 	'Московский государственный институт электронной техники <br> (технический университет). ',
+		// 	'Информатика. ',
+		// 	'Примечание: '
+		// ];
+		//Задание 1.10
+		//Объект
+		// let obj = {
+		// 	surname: "Карамзин",
+		// 	name:"Виктор",
+		// 	patronymic:"Геннадьевич",
+		// 	ocupation:"Преподаватель специальных дисциплин. ",
+		// 	degree:"Высшее. ",
+		// 	category:"Первая. ",
+		// 	education:"Московский государственный институт электронной техники <br> (технический университет).",
+		// 	discipline:"Информатика. ",
+		// 	note:"Примечание: "
+		// };
+		//Задание 1.12
+		let obj = {
+			surname: "Карамзин",
+			name:"Виктор",
+			patronymic:"Геннадьевич",
+			ocupation:"Преподаватель специальных дисциплин. ",
+			degree:"Высшее. ",
+			category:"Первая. ",
+			education:["Московский государственный институт электронной техники (технический университет),"," Санкт-Петербургский государственный университет (СПбГУ)"],
+			discipline:["Информатика", "Основы программирования", "Инженерная графика"],
+			note:"Примечание: "
+		};
+		document.write("<b>",obj.surname," ",obj.name," ",obj.patronymic,"</b>","<br>","<br>");
+		document.write("<i>Должность: </i>",obj.ocupation,"<br>","<br>");
+		document.write("<i>Уровень образования: </i>",obj.degree,"<br>","<br>");
+		document.write("<i>Категория: </i>",obj.category,"<br>","<br>");
+		document.write("<i>Образование: </i>",obj.education[0],"<br>",obj.education[1],"<br>","<br>");
+		document.write("<i>Дисциплины: </i>","<br>","<ul>","<li>",obj.discipline[0],"</li>","<li>",obj.discipline[1],"</li>","<li>",obj.discipline[2],"</li>","</ul>");
+		document.write("<i>",obj.note,"</i>");
+	</script>
+</head>
+
+<body>
+	
+	
+	<header>
+		<h1 align = "center">Введение в JavaScript</h1>
+	</header>	
+	
+	<div class="content">
+		
+		<script>
+			//Задание 1.8
+			// document.write('<b>' + surname + " " + name + " " + patronymic + '</b>' + '<br>' + '<br>');	
+			// document.write('<i>Должность: </i>' + ocupation + '<br>' + '<br>');	
+			// document.write('<i>Уровень образования: </i>' + degree + '<br>' + '<br>');
+			// document.write('<i>Категория: </i>' + category + '<br>' + '<br>');
+			// document.write('<i>Образование: </i>' + education + '<br>' + '<br>');
+			// document.write('<i>Дисциплина: </i>' + discipline + '<br>' + '<br>' + '<i>Примечание: </i>');
+			//Вывод значений массива
+			//Задание 1.9			
+			// document.write("<b>",array[0]," ", array[1]," ",array[2],"</b>", "<br>","<br>");
+			// document.write("<i>", "Должность: ","</i>", array[3], "<br>", "<br>");
+			// document.write("<i>", "Уровень образования: ","</i>", array[4],"<br>","<br>");
+			// document.write("<i>Категория: </i>",array[5],"<br>","<br>");
+			// document.write("<i>Образование: </i>",array[6],"<br>","<br>");
+			// document.write('<i>Дисциплина: </i>', array[7],"<br>","<br>","<i>",array[8],"</i>");
+			//Задание 1.10
+			//Инициализация свойств объекта
+			obj.surname = "Карамзин";
+			obj.name = "Виктор";
+			obj.patronymic = "Геннадьевич";
+			obj.ocupation = "Преподаватель специальных дисциплин. ";
+			obj.degree = "Высшее. ";
+			obj.category = "Первая. ";
+			obj.education = "Московский государственный институт электронной техники <br> (технический университет).";
+			obj.discipline = "Информатика. ";
+			obj.note = "Примечание: ";
+			//Вывод объекта
+			document.write("<b>",obj.surname," ",obj.name," ", obj.patronymic,"</b>","<br>","<br>");
+			document.write("<i>Должность: </i>", obj.ocupation, "<br>","<br>");
+			document.write("<i>Уровень образования: </i>",obj.degree, "<br>","<br>");
+			document.write("<i>Категория: </i>",obj.category,"<br>","<br>");
+			document.write("<i>Образование: </i>",obj.education,"<br>","<br>");
+			document.write("<i>Дисциплина: </i>",obj.discipline,"<br>","<br>","<i>",obj.note,"</i>");
+			//Задание 1.11
+			//Фрагмент строки с интерполяцией переменных для вывода
+			let line = `<h2>${obj.surname} ${obj.name} ${obj.patronymic}</h2>
+			<p><i>Должность: </i>${obj.ocupation}</p>
+			<p><i>Уровень образования: </i>${obj.degree}</p>
+			<p><i>Категория: </i>${obj.category}</p>
+			<p><i>Образование: </i>${obj.education}</p>
+			<p><i>Дисциплина: </i>${obj.discipline}</p>
+			<p><i>${obj.note}</i></p>`;		
+			document.write(line);	
+			//Задание 1.12
+			//Выполненное задание расположено выше		
+
+		</script>
+		
+	</div>	
+	<footer align = "center">
+		<h3>Добро пожаловать на pechora_PROger</h3>
+		<a href="https://vk.com/pechora_proger" target="__blank">pechora_PROger</a>
+	</footer>
+	
+
+	
+</body>
+</html>
