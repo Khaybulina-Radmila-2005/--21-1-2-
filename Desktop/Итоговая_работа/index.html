@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио преподавателя</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script>
+        //Объект с данными преподавателя
+        let detailsTeacher = {
+            surname:"Михеева",
+            name:"Татьяна",
+            patronymic:"Александровна",
+            ocupation:"Преподаватель специальных дисциплин",
+            degree:"Высшее",
+            education:"Московский государственный институт электронной техники (технический университет)",
+            qualification:"Инженер-программист инфокоммуникационных систем",
+            speciality:"Программное обеспечение радиоэлектронных систем",
+            discipline:["Основы алгоритмизации и программирования;","Компьютерная графика"]            
+        };
+        //Объект для дополнительных данных преподавателя
+        //С данными свойствами promt не работает, а только интерполяция
+        let DopDetailsTeacher = {
+            email:"pechora-proger@mail.ru",
+            site:"pechora-proger.ru"
+        };        
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="main-menu">
+            <a>О проекте</a>
+            <a>Курсы</a>
+            <a>Преподаватели</a>
+            <a>Контакты</a>
+        </nav>
+    </header>
+    <main>
+        <div class="PhotoLecturer">
+            <img src="images/no-image.jpg" alt="Фото преподавателя" width="350">
+        </div>
+        <section class="info">
+            <!-- Вывести данные преподавателя в этот раздел -->
+            <script>                
+                let InfoLecturer = `<h1 class="Headline_1">${detailsTeacher.surname} <br> ${detailsTeacher.name}
+                    ${detailsTeacher.patronymic} </h1>
+                    <h2 class="Headline_2">${detailsTeacher.ocupation}  <hr></h2> 
+                    <h3 class="Headline_3">Основная информация: </h3>
+                    <ul type="square" class="ul_1"><li><b>Уровень образования: ${detailsTeacher.degree}</b></li>
+                        <li><b>Образование: ${detailsTeacher.education}</b></li>
+                        <li><b>Квалификация: ${detailsTeacher.qualification}</b></li>
+                        <li><b>Специализация: ${detailsTeacher.speciality}</b></li>
+                        <li><b>Преподаваемые дисциплины: <br><ul type="circle"> <li>${detailsTeacher.discipline[0]}</li>
+                            <li>${detailsTeacher.discipline[1]}</li></ul></b></li></ul>
+                            <h3 class="Headline_3">Дополнительная информация: </h3>
+                    `;
+                    document.write(InfoLecturer);
+                    //Promt - диалоговое окно для дополнительной информации                
+                    var category = prompt("Категория: ","Первая");
+                    var experience = prompt("Стаж: ",13);                    
+                    document.write(`<ul type="square" class="ul_1">
+                        <li><b>Категория: ${category}</b></li>
+                        <li><b>Стаж: ${experience}</b></li>
+                        <li><b>E-mail:${DopDetailsTeacher.email}</b></li>
+                        <li><b>Персональный сайт: ${DopDetailsTeacher.site}</b></li>                                                                   
+                        </ul>`);                     
+            </script>
+        </section>        
+    </main>    
+</body>
+</html>
