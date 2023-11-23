@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квадратное уравнение</title>
+</head>
+<body>        
+    <p>
+        <label for="a">
+            a
+        </label>
+        <input type="text" id="a" name="st1">
+    </p>
+    <p>
+        <label for="b">
+            b
+        </label>
+        <input type="text" id="b" name="st2">
+    </p>
+    <p>
+        <label for="c">
+            c
+        </label>
+        <input type="text" id="c" name="st3">
+    </p>
+    <p>
+        <input type="submit" value="Отправить" onClick="QuadraticEquation()">
+    </p>        
+    <p id="ab"></p>
+    Дискриминант равен
+    <span id="Discriminant"></span>        
+    <span id="Discriminant1"></span>
+    <p id="x1">
+        <label>
+            x1 = 
+        </label>
+        <p></p>
+    </p>
+    <p>
+        <label id="x2">
+            x2 = 
+        </label>            
+    </p>   
+    <script>        
+        function QuadraticEquation() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            var c = Number(document.getElementById("c").value);
+            var D = b*b - 4*a*c;
+            document.getElementById("Discriminant").innerHTML = D;
+            if (D<0) {
+                document.getElementById("Discriminant1").innerHTML = "Корней нет, так как дискриминант меньше нуля!";
+                var x1="корня нет";
+                document.getElementById("x1").innerHTML = x1;
+                var x2="корня нет";
+                document.getElementById("x2").innerHTML = x2;
+            }
+            else if (D===0) {
+                document.getElementById("Discriminant1").innerHTML = "Будет 2 одинаковых корня, так как дискриминант равен нулю";
+                x1 = -b/(2*a);
+                document.getElementById("x1").innerHTML = x1.toFixed(2);
+                x2 = -b/(2*a);
+                document.getElementById("x2").innerHTML = x2.toFixed(2);
+            }
+            else {
+                document.getElementById("Discriminant1").innerHTML = "У уравнения будет 2 корня, так как дискриминант больше нуля";
+                x1 = (-b+Math.sqrt(D))/(2*a);
+                document.getElementById("x1").innerHTML = x1.toFixed(2);
+                x2 = (-b-Math.sqrt(D))/(2*a);
+                document.getElementById("x2").innerHTML = x2.toFixed(2);
+            }
+        }        
+    </script>    
+</body>
+</html>
